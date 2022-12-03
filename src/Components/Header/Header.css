@@ -1,0 +1,16 @@
+.item a:hover{
+    color: rgb(255, 255, 255);
+    border-bottom: 2px solid red;
+}
+
+.active{
+    color: rgb(255, 255, 255);
+    border-bottom:2px solid red;
+}
+
+.item a {
+    text-decoration: none;
+    margin-left: 10px;
+
+}
+

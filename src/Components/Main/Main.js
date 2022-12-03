@@ -1,12 +1,24 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
-
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Outlet } from 'react-router-dom';
 const Main = () => {
     return (
         <div>
-            <Header></Header>
-            <Outlet></Outlet>
+              <Header></Header>
+            <Container>
+          
+            <Row >
+        <Col className="col-lg-8 b"><Outlet></Outlet></Col>
+        <Col className="col-lg-4"> <h2>h2</h2> </Col>
+      </Row>
+      
+   
+            </Container>
+          
+            
         </div>
     );
 };
