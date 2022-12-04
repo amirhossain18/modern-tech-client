@@ -9,6 +9,7 @@ import Course from './Components/Course/Course';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Main from './Components/Main/Main';
+import Regestration from './Components/Login/Regestration';
 
 
 
@@ -37,6 +38,10 @@ function App() {
     {
       path:'/login',
       element: <Login></Login>,
+    },
+    {
+      path:'/regestration',
+      element: <Regestration></Regestration>
     },
     {
       path:'/faq',

@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Outlet } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 const Main = () => {
     return (
         <div>
@@ -17,7 +18,7 @@ const Main = () => {
       
    
             </Container>
-          
+          <Footer></Footer>
             
         </div>
     );

@@ -14,3 +14,11 @@
 
 }
 
+.nevNew{
+    display: flex!important;
+    flex-basis: auto;
+    flex-direction: row-reverse;
+}
+img.ml-5 {
+    height: 43px;
+}
