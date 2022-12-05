@@ -11,40 +11,65 @@ import { AuthContext } from '../../Context/UserContext';
 
 
 
+
+
 const Header = () => {
     const [isDark, setIsDark] = useState(false);
-    const {user}= useContext(AuthContext)
-
+    const {user , logout}= useContext(AuthContext)
+  
+ const handleLogOut= ()=>{
+  logout()
+  .then(()=>{})
+  .catch(err=>console.log(err))
+ }
      
     return (
       
 
 
+
         
-        <Navbar bg="dark" expand="lg">
+        <Navbar bg="light" expand="lg">
         <Container className="nevNew">
-        <h4 className='text-white mr-4'>{user?.name}</h4>
-        <img className="ml-5" src={logo} alt="" />
-          <Navbar.Brand className='active' href="/">
-         
-           Modern Tech</Navbar.Brand>
+
+        <Nav className="me-end item">
+            <NavLink  className={({ isActive, isPending }) => {return isActive ? "active" :  "text-black"}} to='/' >Home</NavLink>
+            <NavLink className={({ isActive, isPending }) => {return isActive ? "active" :  "text-black"}} to='/courses'>Course</NavLink>
+            <NavLink  className={({ isActive, isPending }) => {return isActive ? "active" :  "text-black"}} to='/blog' >Blog</NavLink>
+            <NavLink className={({ isActive, isPending }) => {return isActive ? "active" :  "text-black"}} to='faq'>Faq</NavLink>
+          
+
+            </Nav>
+
+       
+   
         
           
        
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav ">
-            <Nav className="me-end item">
-            <NavLink  className={({ isActive, isPending }) => {return isActive ? "active" :  "text-white"}} to='/' >Home</NavLink>
-            <NavLink className={({ isActive, isPending }) => {return isActive ? "active" :  "text-white"}} to='/courses'>Course</NavLink>
-            <NavLink  className={({ isActive, isPending }) => {return isActive ? "active" :  "text-white"}} to='/blog' >Blog</NavLink>
-            <NavLink className={({ isActive, isPending }) => {return isActive ? "active" :  "text-white"}} to='faq'>Faq</NavLink>
-            <NavLink className={({ isActive, isPending }) => {return isActive ? "active" :  "text-white"}} to='login'>Login</NavLink>
-
-            </Nav>
+          <h4 className='text-black mr-4'>{}</h4>
+      
+      <img className="ml-5" src={logo} alt="" />
+        <Navbar.Brand className='active' href="/">
+       
+         Modern Tech</Navbar.Brand>
             <ReactThemeToggleButton isDark={isDark} onChange={() => setIsDark(prevIsDark => !prevIsDark)} />
           </Navbar.Collapse>
       
         </Container>
+        {
+  user?.uid ? 
+  <>
+    <span>{user.displayName}  </span> : {user.email}
+    <button className="btn btn-danger" onClick={handleLogOut}>Sign Out</button>
+   
+  </>
+   :
+ <>
+ <NavLink className={({ isActive, isPending }) => {return isActive ? "active" :  "text-black"}} to='login'>Login</NavLink>
+ </>
+}
       </Navbar>
     );
 };

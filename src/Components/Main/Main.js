@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import Sidevar from '../SideBar/Sidevar';
 const Main = () => {
     return (
         <div>
@@ -13,7 +14,9 @@ const Main = () => {
           
             <Row >
         <Col className="col-lg-8 b"><Outlet></Outlet></Col>
-        <Col className="col-lg-4"> <h2>h2</h2> </Col>
+        <Col className="col-lg-4"> 
+        <Sidevar></Sidevar>
+         </Col>
       </Row>
       
    

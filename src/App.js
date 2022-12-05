@@ -10,6 +10,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Main from './Components/Main/Main';
 import Regestration from './Components/Login/Regestration';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 
@@ -29,10 +30,11 @@ function App() {
     },
     {
       path:'/blog',
-      element: <Blog></Blog>,
+      element: <PrivateRoute><Blog></Blog></PrivateRoute>,
     }, 
     {
       path:'/courses',
+      loader: ()=> fetch('http://localhost:5000/courses'), 
       element: <Course></Course>,
     },
     {
