@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CourseCade from '../CourseCade';
+import CourseDetails from '../CourseDetails/CourseDetails';
 
 const Course = () => {
     const courses= useLoaderData()
@@ -15,6 +16,16 @@ const Course = () => {
                 key={course.id}
                 course={course}
                 ></CourseCade>)
+
+              
+            }
+                {
+                courses.map(course =><CourseDetails
+                key={course.id}
+                course={course}
+                ></CourseDetails>)
+
+              
             }
         </div>
     );

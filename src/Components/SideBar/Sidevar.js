@@ -2,10 +2,12 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { AuthContext } from '../../Context/UserContext';
-import { BsGoogle } from "react-icons/bs";
+import { useLocation, useNavigate } from 'react-router-dom';
 const Sidevar = () => {
-const {providerGoogle , loading}= useContext(AuthContext)
-
+const {providerGoogle }= useContext(AuthContext)
+const Navigate= useNavigate()
+const location = useLocation()
+const from= location.state?.from?.pathname || '/';
 
 
 
@@ -16,7 +18,7 @@ const googleProvider= new GoogleAuthProvider()
         .then(result=>{
             const user = result.user
             console.log(user)
-            loading(false);
+            Navigate(from , {replace: true})
         })
         .catch(err=>console.error(err))
     }
@@ -25,7 +27,11 @@ const googleProvider= new GoogleAuthProvider()
     
     return (
         <div>
-    <Button className="align-items-center" onClick={handelSignin}  variant="outline-success">Google Sign in <BsGoogle></BsGoogle></Button>
+            <div class="d-grid gap-2 col-6 mx-auto">
+  <button onClick={handelSignin} class="btn btn-primary" type="button"> <i class="fa-brands fa-google"> </i> Sign In</button>
+  <button class="btn btn-primary" type="button">Button</button>
+</div>
+    <Button className="align-items-center"   variant="outline-success">Google Sign in</Button>
         </div>
     );
 };

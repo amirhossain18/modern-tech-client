@@ -1,11 +1,19 @@
 
 import React from 'react';
-import { Card, CardGroup, Col, ListGroup, Row , Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Card,  Col, Row , } from 'react-bootstrap';
+import { Link, Navigate } from 'react-router-dom';
 import './CourseCard.css'
+
+
 const CourseCade = (props) => {
     const course=props.course
-    const {img , time, category}= course;
+    const {id, img , time, category}= course;
+console.log(course)
+    const handledata=(id)=>{
+      Navigate(`/courses/${id}`)
+    }
+
+
     return (
         <Row  className="g-4">
         
@@ -23,7 +31,14 @@ const CourseCade = (props) => {
                   longer.
                 </Card.Text>
                 <h4> {time}</h4>
-                <Link className="btn btn-primary"> Details</Link>
+              
+              <button onClick={()=> handledata(id)}>
+
+              <Link to={`/courses/${id}`} course={course} className="btn btn-primary">    Details</Link>
+              </button>
+               
+                
+             
               </Card.Body>
         </Col>
               

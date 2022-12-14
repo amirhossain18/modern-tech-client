@@ -8,6 +8,7 @@ import Faq from './Components/Course/ConditionFAQ/Faq';
 import Course from './Components/Course/Course';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
+import CourseDetails from './Components/CourseDetails/CourseDetails';
 import Main from './Components/Main/Main';
 import Regestration from './Components/Login/Regestration';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
@@ -34,7 +35,7 @@ function App() {
     }, 
     {
       path:'/courses',
-      loader: ()=> fetch('http://localhost:5000/courses'), 
+      loader: ()=> fetch('https://modern-tech-server.vercel.app/courses'), 
       element: <Course></Course>,
     },
     {
@@ -49,6 +50,10 @@ function App() {
       path:'/faq',
       element:<Faq></Faq>,
     },
+    {
+      path:'/courses/:id',
+      element:<CourseDetails></CourseDetails>,
+    }
 
      ]
 
