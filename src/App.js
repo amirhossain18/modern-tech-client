@@ -2,7 +2,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Blog from './Components/Blog/Blog';
 import Faq from './Components/Course/ConditionFAQ/Faq';
 import Course from './Components/Course/Course';

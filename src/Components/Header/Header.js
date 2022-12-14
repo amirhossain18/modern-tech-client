@@ -33,10 +33,10 @@ const Header = () => {
         <Container className="nevNew">
 
         <Nav className="me-end item">
-            <NavLink  className={({ isActive, isPending }) => {return isActive ? "active" :  "text-black"}} to='/' >Home</NavLink>
-            <NavLink className={({ isActive, isPending }) => {return isActive ? "active" :  "text-black"}} to='/courses'>Course</NavLink>
-            <NavLink  className={({ isActive, isPending }) => {return isActive ? "active" :  "text-black"}} to='/blog' >Blog</NavLink>
-            <NavLink className={({ isActive, isPending }) => {return isActive ? "active" :  "text-black"}} to='faq'>Faq</NavLink>
+            <NavLink  className={({ isactives, isPending }) => {return isactives ? "actives" :  "text-black"}} to='/' >Home</NavLink>
+            <NavLink className={({ isactives, isPending }) => {return isactives ? "actives" :  "text-black"}} to='/courses'>Course</NavLink>
+            <NavLink  className={({ isactives, isPending }) => {return isactives ? "actives" :  "text-black"}} to='/blog' >Blog</NavLink>
+            <NavLink className={({ isactives, isPending }) => {return isactives ? "actives" :  "text-black"}} to='faq'>Faq</NavLink>
           
 
             </Nav>
@@ -66,9 +66,9 @@ const Header = () => {
    
   </>
    :
- <>
- <NavLink className={({ isActive, isPending }) => {return isActive ? "active" :  "text-black"}} to='login'>Login</NavLink>
- </>
+ <div className="btn btn-success text-white">
+ <NavLink   className={({ isactives, isPending }) => {return isactives ? "actives" :  "text-white"}} to='login'>Login</NavLink>
+ </div>
 }
       </Navbar>
     );
