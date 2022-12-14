@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build/modern-tech",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
